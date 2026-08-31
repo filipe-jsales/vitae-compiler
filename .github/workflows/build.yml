@@ -1,0 +1,49 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Install Tectonic
+        run: |
+          curl --proto '=https' --tlsv1.2 -fsSL https://drop-sh.fullyjustified.net | sh
+          echo "$PWD" >> "$GITHUB_PATH"
+
+      - name: Run unit tests
+        run: pytest -q
+
+      - name: Validate data
+        run: python src/validate.py --data data/example --schema schema
+
+      - name: Build CV (PDF + JSON + TXT)
+        run: python src/build.py --data data/example
+
+      - name: ATS-friendliness check
+        run: |
+          python src/ats_check.py --pdf output/cv-pt.pdf --data data/example --lang pt
+          python src/ats_check.py --pdf output/cv-en.pdf --data data/example --lang en
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-output
+          path: |
+            output/cv-pt.pdf
+            output/cv-en.pdf
+            output/cv.json
+            output/cv.txt
+          if-no-files-found: error

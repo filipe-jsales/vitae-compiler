@@ -1,0 +1,9 @@
+- titulo: "Melhor Artigo Estudantil"
+  instituicao: "Congresso Exemplo de Computação"
+  ano: 2023
+  descricao: "Prêmio concedido ao artigo com maior contribuição técnica entre os trabalhos de estudantes."
+
+- titulo: "Bolsa de Produtividade em Pesquisa"
+  instituicao: "Agência Exemplo de Fomento (AEF)"
+  ano: 2022
+  descricao: "Bolsa concedida com base no histórico de publicações e orientações."

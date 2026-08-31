@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/cv-as-code/schema/premios.schema.json",
+  "title": "Premios",
+  "description": "Lista de prêmios e distinções.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["titulo", "instituicao", "ano"],
+    "additionalProperties": false,
+    "properties": {
+      "titulo": { "type": "string", "minLength": 1 },
+      "instituicao": { "type": "string", "minLength": 1 },
+      "ano": { "type": "integer", "minimum": 1900, "maximum": 2100 },
+      "descricao": { "type": "string" }
+    }
+  }
+}

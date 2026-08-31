@@ -1,0 +1,21 @@
+% cabecalho.tex.j2 - Cabeçalho: nome, título, contato, resumo, palavras-chave.
+% Tudo em texto real selecionável, sem tabelas (ordem de leitura linear).
+
+\cvheader{\VAR{perfil.nome}}{\VAR{perfil.titulo[lang]}}
+
+\noindent
+\VAR{perfil.email}
+\BLOCK{ if perfil.get('telefone') } \textbar\ \VAR{perfil.telefone}\BLOCK{ endif }
+\BLOCK{ if perfil.get('localizacao') } \textbar\ \VAR{perfil.localizacao}\BLOCK{ endif }
+\BLOCK{ if perfil.get('site') } \textbar\ \url{\VAR{perfil.site | safe}}\BLOCK{ endif }
+\BLOCK{ if perfil.get('orcid') } \textbar\ ORCID: \VAR{perfil.orcid}\BLOCK{ endif }
+\BLOCK{ if perfil.get('lattes_id') } \textbar\ Lattes: \VAR{perfil.lattes_id}\BLOCK{ endif }
+\BLOCK{ if perfil.get('github') } \textbar\ GitHub: \VAR{perfil.github}\BLOCK{ endif }
+\BLOCK{ if perfil.get('linkedin') } \textbar\ LinkedIn: \VAR{perfil.linkedin}\BLOCK{ endif }
+\par
+
+\section*{\VAR{labels.resumo}}
+\VAR{perfil.resumo[lang]}
+
+\section*{\VAR{labels.palavras_chave}}
+\VAR{perfil.palavras_chave | join(', ')}

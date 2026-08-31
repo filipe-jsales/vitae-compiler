@@ -1,0 +1,20 @@
+- disciplina: "Processamento de Linguagem Natural"
+  instituicao: "Universidade Exemplo (UEX)"
+  nivel: "pos_graduacao"
+  ano_inicio: 2022
+  ano_fim: null
+  carga_horaria: 60
+
+- disciplina: "Estrutura de Dados"
+  instituicao: "Universidade Exemplo (UEX)"
+  nivel: "graduacao"
+  ano_inicio: 2020
+  ano_fim: 2022
+  carga_horaria: 80
+
+- disciplina: "Introdução à Ciência de Dados"
+  instituicao: "Instituto Exemplo de Extensão (IEE)"
+  nivel: "extensao"
+  ano_inicio: 2021
+  ano_fim: 2021
+  carga_horaria: 20

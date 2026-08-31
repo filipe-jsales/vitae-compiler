@@ -1,0 +1,65 @@
+% theme.sty - Tema "academico-padrao" do cv-as-code
+%
+% Objetivo: layout de UMA COLUNA, sem tabelas/multicols para o corpo principal,
+% para garantir ordem de leitura linear (requisito de ATS-friendliness).
+% Ver docs/ats-optimization.md para o racional completo.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{theme}[2026/01/01 cv-as-code academico-padrao theme]
+
+\RequirePackage[a4paper, margin=2cm]{geometry}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{lmodern}
+\RequirePackage{titlesec}
+\RequirePackage{enumitem}
+\RequirePackage{xcolor}
+\RequirePackage{hyperref}
+\RequirePackage{parskip}
+\RequirePackage{fontawesome5}
+
+% -- Cores --------------------------------------------------------------
+\definecolor{cvaccent}{HTML}{1A5276}
+\definecolor{cvtext}{HTML}{1B1B1B}
+\color{cvtext}
+
+% -- Hyperlinks + metadados PDF (Dublin Core / básicos) ------------------
+% Metadados detalhados (XMP/hyperxmp) sao definidos no main.tex, por
+% documento, pois dependem dos dados do YAML.
+\hypersetup{
+  colorlinks=true,
+  linkcolor=cvaccent,
+  urlcolor=cvaccent,
+  citecolor=cvaccent,
+  pdfstartview=FitH,
+  bookmarksopen=true,
+  bookmarksnumbered=true,
+}
+
+% -- Títulos de seção (H1 semânticos, nomes reconhecíveis por parsers) --
+\titleformat{\section}
+  {\Large\bfseries\color{cvaccent}}
+  {}{0em}{}
+  [\vspace{-0.3em}{\color{cvaccent}\hrule height 1pt}]
+\titlespacing*{\section}{0pt}{1.2em}{0.6em}
+
+\titleformat{\subsection}
+  {\normalsize\bfseries}
+  {}{0em}{}
+\titlespacing*{\subsection}{0pt}{0.8em}{0.2em}
+
+% -- Listas compactas, sem símbolos gráficos incomuns --------------------
+\setlist[itemize]{leftmargin=1.4em, itemsep=0.15em, topsep=0.15em, label=\textbullet}
+
+% -- Cabeçalho do currículo (texto real, sem imagens/QR obrigatórios) ----
+\newcommand{\cvheader}[2]{%
+  {\Huge\bfseries #1}\par
+  {\large\color{cvaccent} #2}\par
+  \vspace{0.4em}
+}
+
+% Linha de contato: apenas texto simples separado por " | ", nunca em
+% tabela, para preservar a ordem de leitura linear.
+\newcommand{\cvcontactitem}[1]{#1}
+
+\endinput

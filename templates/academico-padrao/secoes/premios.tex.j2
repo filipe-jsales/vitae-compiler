@@ -1,0 +1,9 @@
+% premios.tex.j2 - Lista de prêmios e distinções, ordenada por ano decrescente.
+\BLOCK{ if premios }
+\section*{\VAR{labels.premios}}
+\begin{itemize}
+\BLOCK{ for p in premios | sort(attribute='ano', reverse=True) }
+  \item \textbf{\VAR{p.titulo}} --- \VAR{p.instituicao} (\VAR{p.ano})\BLOCK{ if p.get('descricao') }. \VAR{p.descricao}\BLOCK{ endif }
+\BLOCK{ endfor }
+\end{itemize}
+\BLOCK{ endif }

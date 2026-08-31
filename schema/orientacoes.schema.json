@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/cv-as-code/schema/orientacoes.schema.json",
+  "title": "Orientacoes",
+  "description": "Lista de orientações de alunos (TCC, mestrado, doutorado, IC).",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["aluno", "tipo", "titulo", "ano_inicio", "situacao"],
+    "additionalProperties": false,
+    "properties": {
+      "aluno": { "type": "string", "minLength": 1 },
+      "tipo": {
+        "type": "string",
+        "enum": ["iniciacao_cientifica", "tcc", "mestrado", "doutorado", "pos_doutorado"]
+      },
+      "titulo": { "type": "string", "minLength": 1 },
+      "instituicao": { "type": "string" },
+      "ano_inicio": { "type": "integer", "minimum": 1900, "maximum": 2100 },
+      "ano_fim": { "type": ["integer", "null"], "minimum": 1900, "maximum": 2100 },
+      "situacao": {
+        "type": "string",
+        "enum": ["em_andamento", "concluida"]
+      }
+    }
+  }
+}

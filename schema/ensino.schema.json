@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/cv-as-code/schema/ensino.schema.json",
+  "title": "Ensino",
+  "description": "Lista de disciplinas/cursos ministrados.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["disciplina", "instituicao", "ano_inicio", "nivel"],
+    "additionalProperties": false,
+    "properties": {
+      "disciplina": { "type": "string", "minLength": 1 },
+      "instituicao": { "type": "string", "minLength": 1 },
+      "nivel": {
+        "type": "string",
+        "enum": ["graduacao", "pos_graduacao", "extensao"]
+      },
+      "ano_inicio": { "type": "integer", "minimum": 1900, "maximum": 2100 },
+      "ano_fim": { "type": ["integer", "null"], "minimum": 1900, "maximum": 2100 },
+      "carga_horaria": { "type": "integer", "minimum": 1 }
+    }
+  }
+}

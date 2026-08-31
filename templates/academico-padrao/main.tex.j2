@@ -1,0 +1,33 @@
+% main.tex.j2 - Template raiz do tema "academico-padrao".
+% Gerado a partir dos dados YAML por src/build.py (motor Jinja2).
+% NÃO EDITE O .tex GERADO DIRETAMENTE — edite os arquivos em data/*.yaml
+% ou este template.
+%
+% Nota sobre PDF taggeado (PDF/UA): o kernel do LaTeX (2022-11+) oferece
+% suporte experimental a tagging via \DocumentMetadata{tagged=true}. Está
+% desabilitado por padrão neste template por estabilidade de build entre
+% engines (tectonic/latexmk). Veja docs/ats-optimization.md para como
+% habilitar.
+
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{theme}
+\usepackage[
+  pdfauthor={\VAR{perfil.nome}},
+  pdftitle={\VAR{labels.titulo_documento}},
+  pdfsubject={\VAR{perfil.titulo[lang]}},
+  pdfkeywords={\VAR{perfil.palavras_chave | join(', ')}},
+  pdflang={\VAR{lang}},
+]{hyperxmp}
+
+\begin{document}
+\pagestyle{empty}
+
+\input{secoes/cabecalho.tex}
+\input{secoes/publicacoes.tex}
+\input{secoes/projetos.tex}
+\input{secoes/orientacoes.tex}
+\input{secoes/ensino.tex}
+\input{secoes/premios.tex}
+
+\end{document}

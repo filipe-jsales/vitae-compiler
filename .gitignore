@@ -1,0 +1,22 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# artefatos de build LaTeX
+build/
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.out
+*.xmpdata
+*.xmpi
+
+# saída do build (PDF/JSON/TXT gerados) — o exemplo publicado fica em examples/
+output/
+
+.DS_Store
+Thumbs.db
+.pytest_cache/

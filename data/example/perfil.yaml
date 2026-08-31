@@ -1,0 +1,29 @@
+nome: "Maria da Silva"
+titulo:
+  pt: "Pesquisadora em Ciência da Computação"
+  en: "Computer Science Researcher"
+email: "maria.silva@example.edu"
+telefone: "+55 11 99999-0000"
+localizacao: "São Paulo, Brasil"
+orcid: "0000-0002-1825-0097"
+lattes_id: "1234567890123456"
+site: "https://mariasilva.example.edu"
+github: "mariasilva"
+linkedin: "mariasilva"
+afiliacao: "Universidade Exemplo (UEX)"
+resumo:
+  pt: >
+    Pesquisadora com foco em processamento de linguagem natural e sistemas
+    distribuídos, com experiência em orientação de alunos de graduação e
+    pós-graduação e publicações em periódicos e conferências internacionais.
+  en: >
+    Researcher focused on natural language processing and distributed
+    systems, with experience advising undergraduate and graduate students
+    and publications in international journals and conferences.
+palavras_chave:
+  - "Processamento de Linguagem Natural"
+  - "Aprendizado de Máquina"
+  - "Sistemas Distribuídos"
+  - "Python"
+  - "LaTeX"
+  - "Docência"

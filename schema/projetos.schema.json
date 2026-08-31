@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/cv-as-code/schema/projetos.schema.json",
+  "title": "Projetos",
+  "description": "Lista de projetos de pesquisa/desenvolvimento.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["titulo", "descricao", "ano_inicio"],
+    "additionalProperties": false,
+    "properties": {
+      "titulo": { "type": "string", "minLength": 1 },
+      "descricao": {
+        "type": "object",
+        "required": ["pt", "en"],
+        "additionalProperties": false,
+        "properties": {
+          "pt": { "type": "string", "minLength": 1 },
+          "en": { "type": "string", "minLength": 1 }
+        }
+      },
+      "papel": { "type": "string" },
+      "financiamento": { "type": "string" },
+      "ano_inicio": { "type": "integer", "minimum": 1900, "maximum": 2100 },
+      "ano_fim": {
+        "type": ["integer", "null"],
+        "minimum": 1900,
+        "maximum": 2100
+      },
+      "url": { "type": "string", "format": "uri" }
+    }
+  }
+}

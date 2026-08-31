@@ -1,0 +1,9 @@
+% publicacoes.tex.j2 - Lista de publicações, ordenada por ano decrescente.
+\BLOCK{ if publicacoes }
+\section*{\VAR{labels.publicacoes}}
+\begin{itemize}
+\BLOCK{ for p in publicacoes | sort(attribute='ano', reverse=True) }
+  \item \VAR{p.autores | join(', ')} (\VAR{p.ano}). \textbf{\VAR{p.titulo}}. \textit{\VAR{p.veiculo}}\BLOCK{ if p.get('volume') }, v.~\VAR{p.volume}\BLOCK{ endif }\BLOCK{ if p.get('paginas') }, p.~\VAR{p.paginas}\BLOCK{ endif }.\BLOCK{ if p.get('doi') } DOI: \url{https://doi.org/\VAR{p.doi | safe}}.\BLOCK{ endif }\BLOCK{ if p.get('qualis') } Qualis: \VAR{p.qualis}.\BLOCK{ endif }
+\BLOCK{ endfor }
+\end{itemize}
+\BLOCK{ endif }

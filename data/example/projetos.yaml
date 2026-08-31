@@ -1,0 +1,29 @@
+- titulo: "CV-as-Code: Currículos Acadêmicos Versionados"
+  descricao:
+    pt: >
+      Ferramenta open source para geração de currículos acadêmicos em PDF a
+      partir de dados estruturados, com foco em legibilidade por sistemas
+      automatizados (ATS, parsers, LLMs).
+    en: >
+      Open source tool for generating academic CVs in PDF from structured
+      data, focused on machine-readability by automated systems (ATS,
+      parsers, LLMs).
+  papel: "Idealizadora e mantenedora"
+  financiamento: "Projeto pessoal / colaboração aberta"
+  ano_inicio: 2026
+  ano_fim: null
+  url: "https://github.com/example/cv-as-code"
+
+- titulo: "Extração Automática de Metadados de Publicações Científicas"
+  descricao:
+    pt: >
+      Desenvolvimento de pipeline para extração e normalização de metadados
+      bibliográficos a partir de DOI e ORCID.
+    en: >
+      Development of a pipeline for extraction and normalization of
+      bibliographic metadata from DOI and ORCID.
+  papel: "Pesquisadora responsável"
+  financiamento: "Agência Exemplo de Fomento (AEF)"
+  ano_inicio: 2021
+  ano_fim: 2023
+  url: "https://example.edu/projetos/metadados"

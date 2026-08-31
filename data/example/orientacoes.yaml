@@ -1,0 +1,23 @@
+- aluno: "João Pereira"
+  tipo: "mestrado"
+  titulo: "Avaliação de Modelos de Linguagem para Sumarização de Currículos"
+  instituicao: "Universidade Exemplo (UEX)"
+  ano_inicio: 2024
+  ano_fim: null
+  situacao: "em_andamento"
+
+- aluno: "Ana Ribeiro"
+  tipo: "iniciacao_cientifica"
+  titulo: "Comparação de Parsers de PDF para Extração de Texto Acadêmico"
+  instituicao: "Universidade Exemplo (UEX)"
+  ano_inicio: 2023
+  ano_fim: 2024
+  situacao: "concluida"
+
+- aluno: "Carlos Mendes"
+  tipo: "tcc"
+  titulo: "Geração Automática de Currículos a partir de Dados Estruturados"
+  instituicao: "Universidade Exemplo (UEX)"
+  ano_inicio: 2022
+  ano_fim: 2022
+  situacao: "concluida"

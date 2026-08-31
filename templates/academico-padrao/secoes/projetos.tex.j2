@@ -1,0 +1,12 @@
+% projetos.tex.j2 - Lista de projetos, ordenada por ano de início decrescente.
+\BLOCK{ if projetos }
+\section*{\VAR{labels.projetos}}
+\begin{itemize}
+\BLOCK{ for p in projetos | sort(attribute='ano_inicio', reverse=True) }
+  \item \textbf{\VAR{p.titulo}} (\VAR{p.ano_inicio}--\BLOCK{ if p.get('ano_fim') }\VAR{p.ano_fim}\BLOCK{ else }\VAR{labels.atual}\BLOCK{ endif }).
+  \VAR{p.descricao[lang]}
+  \BLOCK{ if p.get('papel') } \textit{\VAR{labels.papel}:} \VAR{p.papel}.\BLOCK{ endif }
+  \BLOCK{ if p.get('financiamento') } \textit{\VAR{labels.financiamento}:} \VAR{p.financiamento}.\BLOCK{ endif }
+\BLOCK{ endfor }
+\end{itemize}
+\BLOCK{ endif }

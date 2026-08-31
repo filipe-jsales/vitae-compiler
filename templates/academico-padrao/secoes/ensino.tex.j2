@@ -1,0 +1,9 @@
+% ensino.tex.j2 - Lista de disciplinas ministradas, ordenada por ano de início decrescente.
+\BLOCK{ if ensino }
+\section*{\VAR{labels.ensino}}
+\begin{itemize}
+\BLOCK{ for e in ensino | sort(attribute='ano_inicio', reverse=True) }
+  \item \textbf{\VAR{e.disciplina}} --- \VAR{e.instituicao} (\VAR{labels.nivel_ensino[e.nivel]}, \VAR{e.ano_inicio}--\BLOCK{ if e.get('ano_fim') }\VAR{e.ano_fim}\BLOCK{ else }\VAR{labels.atual}\BLOCK{ endif })\BLOCK{ if e.get('carga_horaria') }, \VAR{e.carga_horaria}h\BLOCK{ endif }.
+\BLOCK{ endfor }
+\end{itemize}
+\BLOCK{ endif }

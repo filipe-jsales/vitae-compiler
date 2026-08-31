@@ -1,0 +1,9 @@
+% orientacoes.tex.j2 - Lista de orientações, ordenada por ano de início decrescente.
+\BLOCK{ if orientacoes }
+\section*{\VAR{labels.orientacoes}}
+\begin{itemize}
+\BLOCK{ for o in orientacoes | sort(attribute='ano_inicio', reverse=True) }
+  \item \VAR{o.aluno} --- \VAR{labels.tipo_orientacao[o.tipo]}: \textbf{\VAR{o.titulo}}\BLOCK{ if o.get('instituicao') }, \VAR{o.instituicao}\BLOCK{ endif } (\VAR{o.ano_inicio}--\BLOCK{ if o.get('ano_fim') }\VAR{o.ano_fim}\BLOCK{ else }\VAR{labels.atual}\BLOCK{ endif }, \VAR{labels.situacao[o.situacao]}).
+\BLOCK{ endfor }
+\end{itemize}
+\BLOCK{ endif }

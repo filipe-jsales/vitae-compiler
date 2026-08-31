@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/cv-as-code/schema/perfil.schema.json",
+  "title": "Perfil",
+  "description": "Dados de identificação e contato do titular do currículo.",
+  "type": "object",
+  "required": ["nome", "titulo", "email", "resumo"],
+  "additionalProperties": false,
+  "properties": {
+    "nome": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Nome completo."
+    },
+    "titulo": {
+      "type": "object",
+      "description": "Título/cargo, por idioma.",
+      "required": ["pt", "en"],
+      "additionalProperties": false,
+      "properties": {
+        "pt": { "type": "string", "minLength": 1 },
+        "en": { "type": "string", "minLength": 1 }
+      }
+    },
+    "email": { "type": "string", "format": "email" },
+    "telefone": { "type": "string" },
+    "localizacao": { "type": "string" },
+    "orcid": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{4}-\\d{4}-\\d{3}[0-9X]$"
+    },
+    "lattes_id": { "type": "string" },
+    "site": { "type": "string", "format": "uri" },
+    "github": { "type": "string" },
+    "linkedin": { "type": "string" },
+    "afiliacao": { "type": "string" },
+    "resumo": {
+      "type": "object",
+      "description": "Resumo/objetivo, por idioma.",
+      "required": ["pt", "en"],
+      "additionalProperties": false,
+      "properties": {
+        "pt": { "type": "string", "minLength": 1 },
+        "en": { "type": "string", "minLength": 1 }
+      }
+    },
+    "palavras_chave": {
+      "type": "array",
+      "description": "Skills/keywords em texto plano, para leitura por ATS.",
+      "items": { "type": "string" },
+      "minItems": 1
+    }
+  }
+}

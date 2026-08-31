@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/cv-as-code/schema/publicacoes.schema.json",
+  "title": "Publicacoes",
+  "description": "Lista de publicações acadêmicas.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["titulo", "autores", "ano", "tipo", "veiculo"],
+    "additionalProperties": false,
+    "properties": {
+      "titulo": { "type": "string", "minLength": 1 },
+      "autores": {
+        "type": "array",
+        "items": { "type": "string" },
+        "minItems": 1
+      },
+      "ano": { "type": "integer", "minimum": 1900, "maximum": 2100 },
+      "tipo": {
+        "type": "string",
+        "enum": ["artigo", "capitulo", "livro", "anais", "preprint", "outro"]
+      },
+      "veiculo": {
+        "type": "string",
+        "description": "Periódico, conferência, editora, etc."
+      },
+      "doi": { "type": "string" },
+      "url": { "type": "string", "format": "uri" },
+      "paginas": { "type": "string" },
+      "volume": { "type": "string" },
+      "qualis": { "type": "string" }
+    }
+  }
+}
